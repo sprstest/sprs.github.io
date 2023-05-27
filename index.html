@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable = no,initial-scale=0.9">
+    <title>QR_CAM</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+    <script src="./xlsx.min.js"></script>     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- <script "type=text/javascript" src ="./html5-qrcode.min.js"></script>
+    
+    <script "type=text/javascript" src ="./SQLinsert.js"></script>
+    <script "type=text/javascript" src ="./excel_insert.js"></script> -->
+    <script src="jquery-3.6.0.min.js"></script> </script>
+</head>
+<div>
+    <span id="message" class="alert alert-success"></span>
+</div>
+<body>  
+    <script>
+
+       // const jsonData = {Name : 'alpha' , Desc : 'test' }
+       $(document).ready(function() {
+        jQuery.support.cors = true;
+        $.ajax({
+
+  type: "POST",
+  url: "./test.json",
+  data: JSON.stringify( {Name : 'alpha' , Desc : 'test' }),
+  contentType: "application/json; charset=utf-8",
+    dataType: "json",
+  success: function (result) {
+    console.log(result);
+  },
+  error: function (result, status) {
+    console.log(result);
+  }
+});})
+
+
+
+    </script>
+</body>
